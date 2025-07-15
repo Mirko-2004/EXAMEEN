@@ -60,7 +60,8 @@ def eliminar_producto(modelo):
             return
     print('El modelo no Existe.')
 
-while True:
+def menu():
+   while True:
     print('Menú Principal')
     print('''
         1. Stock marca
@@ -80,3 +81,4 @@ while True:
         break
     else:
         print('Opción Incorrecta')
+menu()        

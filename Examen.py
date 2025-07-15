@@ -27,12 +27,13 @@ def menu(titulo,opciones):
     return opcion
 
 def Stock_marca(marca):
-   total_stock=0
-   marca=marca
-   for modelo in productos:
-      if productos[modelo][0].lower==marca:
-         total_stock+=stock[modelo][1]
-         print(f'stock total para la marca {marca}: {total_stock}')
+   global stock
+   productos==stock.get(marca)
+   if productos != None:
+       stock= productos[1]
+       print('el stock del producto ' + marca + ' es de ' + str(stock))
+   else:
+       print('producto' + marca + 'no existe')
 
 
 
@@ -79,4 +80,3 @@ while True:
         break
     else:
         print('Opción Incorrecta')
- .....

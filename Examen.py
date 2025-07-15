@@ -52,13 +52,15 @@ def busqueda_ram_precio(ram_min, ram_max, precio):
 
 
 def eliminar_producto(modelo):
-    nombre=input('Ingrese Modelo a Eliminar: ')
-    for clave,valor in productos.items():
-        if valor[0]==nombre:
-            productos.pop(clave) 
-            print('producto eliminado con exito.')
-            return
-    print('El modelo no Existe.')
+    global productos
+    global stock
+    productos= productos.get(modelo)
+    if productos==None:
+        return False
+    else:
+        productos.pop(modelo)
+        stock.pop(modelo)
+        return True
 
 def menu():
    while True:
